@@ -140,13 +140,15 @@
             return true;
         }
     }
-    $name = $_POST['name'];
-    $arr = preg_split('//u', $name, -1, PREG_SPLIT_NO_EMPTY);
+    $name = $_POST['name']; //入力されたテキストを受け取る
+    $arr = preg_split('//u', $name, -1, PREG_SPLIT_NO_EMPTY); //1文字ずつ分割
+    //corrent_check() は入力された漢字が適切かどうかを判定する関数. README で説明します
     if (corrent_check($arr) == false){
         header("HTTP/1.1 204");
         print ("HTTP/1.1 204 変換できない入力です!");
     }else{
         $len = count($arr);
+        //kanji2number() で数字に変換. README でアルゴリズムを説明します
         $output= kanji2number($arr);
         print ("$name<br /> の変換結果<br />");
         print ("$output<br />");

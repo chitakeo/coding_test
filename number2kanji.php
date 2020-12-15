@@ -42,21 +42,39 @@
         }
         return $result;
     }
-    $name = $_POST['name'];
-    if (is_numeric($name) == false || $name < 0 || $name > 10000000000000000){
+    $name = $_POST['name']; //入力されたテキストを受け取る
+    //数値かどうかの判定と数字の範囲の確認
+    if (is_numeric($name) == false || $name < 0 || $name > 10000000000000000){ 
         header("HTTP/1.1 204");
         print ("HTTP/1.1 204 変換できない入力です!");
-    }else{
+    } else {
         $len = strlen($name);
         $arr = str_split($name);
-        $output = "";
+        //数値に小数点が入っていないか確認
+        for ($i = 0; $i < count($arr); $i++){
+            if ($arr[$i] == "."){
+                header("HTTP/1.1 204");
+                print ("HTTP/1.1 204 変換できない入力です!");
+            }
+        }
+        //2桁以上の数字が0から始まっていないか確認
+        if (count($arr) >= 2){
+            if ($arr[0] == 0){
+                header("HTTP/1.1 204");
+                print ("HTTP/1.1 204 変換できない入力です!");
+            }
+        }
+        $output = ""; //変換結果を入れる変数
+        //number2kanji() で漢字に変換. README でアルゴリズムを説明します
         for ($i = 0; $i < $len; $i++) {
             $output = $output . number2kanji($i, $arr[$i], $len); 
         }
+        //0だったら零を代入
         if ($name == 0){
             $output = "零";
         }
         print ("$name<br /> の変換結果<br />");
+        //変換結果出力
         print ("$output<br />");
     }
 ?>
