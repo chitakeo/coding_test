@@ -8,7 +8,7 @@
         if($n == 1){
             $result = $result . "壱";
         } elseif ($n == 2){
-            $result = $result . "弍";
+            $result = $result . "弐";
         } elseif ($n == 3){
             $result = $result . "参";
         } elseif ($n == 4){
