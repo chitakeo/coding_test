@@ -129,13 +129,13 @@
             for ($i = 0; $i < count($arr)-1; $i++){
                 if (number($arr[$i]) <= 9 && number($arr[$i+1]) <= 9){
                     return false;
-                } elseif (number($arr[$i]) >= 13 && number($arr[$i+1]) >= 13){
+                } elseif (number($arr[$i]) >= 13 && number($arr[$i+1]) >= 10){
                     return false;
                 } elseif (number($arr[$i]) >= 10 && number($arr[$i]) <= 12){
                     if (number($arr[$i+1]) >= 10 && number($arr[$i+1]) <= 12){
                         return false;
                     }
-                }
+                } 
             }
             return true;
         }
