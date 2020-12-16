@@ -1,6 +1,6 @@
 <html>
 <meta charset="utf-8"/>
-<head><title>input.html</title></head>
+<head><title>kanjinumbers.php</title></head>
 <body>
 アラビア漢字変換フォーム
 <form action="number2kanji.php" method="post">
