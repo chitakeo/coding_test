@@ -1,6 +1,7 @@
 # coding_test
 コーディングテスト用リポジトリ
 
+# ファイル
 kanjinumbers.php
 ルートのページ
 
@@ -10,6 +11,7 @@ number2kanji.php
 kanji2number.php
 漢字をアラビア数値に変換した結果を表示するページ
 
+# 変換手順
 number2kanji.php においてアラビア数値を漢字に変換する手順
 
 入力文字を一文字ずつ、数字全体とその数字桁数とともにの引数として　number2kanji() を実行し、返り値をつないでいくことで変換結果を構築している。
