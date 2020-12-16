@@ -48,27 +48,15 @@
         $tmp2 = 0;
         for ($i = 0; $i < count($arr); $i++) {
             if (number($arr[$i]) == 10){
-                if ($tmp == 0){
-                    $tmp = 10;
-                } else {
-                    $tmp *= 10;
-                }
+                $tmp *= 10;
                 $tmp2 += $tmp;
                 $tmp = 0;
             } elseif (number($arr[$i]) == 11){
-                if ($tmp == 0){
-                    $tmp = 100;
-                } else {
-                    $tmp *= 100;
-                }
+                $tmp *= 100;
                 $tmp2 += $tmp;
                 $tmp = 0;
             } elseif (number($arr[$i]) == 12){
-                if ($tmp == 0){
-                    $tmp = 1000;
-                } else {
-                    $tmp *= 1000;
-                }
+                $tmp *= 1000;
                 $tmp2 += $tmp;
                 $tmp = 0;
             } elseif (number($arr[$i]) == 13){
